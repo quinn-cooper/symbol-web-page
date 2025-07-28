@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "chalet";
+  src: url("../assets/fonts/chalet/Chalet\ LondonNineteenSixty\ Regular.otf");
+}
+
+@font-face {
+  // supremeLL Bold
+  //   for H1
+  font-family: "supreme bold";
+  src: url("../assets//fonts/Supreme_LL/SupremeLL-Bold.otf");
+}
+
+@font-face {
+  // learn more and about us
+  font-family: "supreme bold flat";
+  src: url("../assets//fonts/Supreme_LL/SupremeLL-BoldFlat.otf");
+}
+
+$background-color: #fffcda;
+$primary-color: #c72a00;
+$white-color: #ffffff;
+$highlight-color: #5a7fec;
+
+$padding-sm: 0.625rem;
+$padding-lg: 1.25rem;
+
+body {
+  background-color: $background-color;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "supreme bold";
+  color: $primary-color;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($columns: repeat(2, 1fr), $rows: auto, $gap: 0.625rem) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+  gap: $gap;
+}
