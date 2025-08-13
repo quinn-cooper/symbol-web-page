@@ -236,10 +236,88 @@
       </div>
     </section>
 
-    <section class="about-us-section"></section>
-    <section class="about-us-section"></section>
+    <section class="about-us-section">
+        <div class="about-info">
+          <div>
+            <h2>About us</h2>
+            <p>
+              We make beautifully functional furniture. Every design we release
+              is the result of a thorough and iterative process, culminating in
+              timeless pieces that can be enjoyed across generations.
+            </p>
+          </div>
+
+          <a href="#">
+            <span> Learn more </span>
+          </a>
+        </div>
+        <div>
+          <picture>
+            <img
+              sizes="(min-width: 940px) 50vw, 100vw"
+              src=" ./assets/img/about-us/about-building-sizes/about-1600.jpg"
+              srcset="
+                ./assets/img/about-us/about-building-sizes/about-400.jpg   400w,
+                ./assets/img/about-us/about-building-sizes/about-600.jpg   600w,
+                ./assets/img/about-us/about-building-sizes/about-800.jpg   800w,
+                ./assets/img/about-us/about-building-sizes/about-1000.jpg 1000w,
+                ./assets/img/about-us/about-building-sizes/about-1600.jpg 1600w,
+                ./assets/img/about-us/about-building-sizes/about-1600.jpg 2000w,
+                ./assets/img/about-us/about-building-sizes/about-1600.jpg 2400w
+              "
+            />
+          </picture>
+        </div>
+      </section>
   </main>
-  <footer></footer>
+  <footer>
+      <div class="form-container">
+        <form action="" method="post">
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Sign up for our newsletter"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="footer-info">
+        <nav class="footer-nav">
+          <div>
+            <ul>
+              <li><a href="#">instagram</a></li>
+              <li><a href="#">facebook</a></li>
+              <li><a href="#">pinterest</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">terms & conditions</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">materials</a></li>
+              <li><a href="#">about</a></li>
+              <li><a href="#">contact</a></li>
+              <li><a href="#">faq</a></li>
+            </ul>
+          </div>
+          <p>&copy; 2025 Symbol Audio.</p>
+        </nav>
+        <div class="footer-logo">
+          <a href="#">
+            <svg viewBox="0 0 25 24">
+              <!-- referenced from symbols website -->
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M6.60568 17.4652V6.55187L17.4657 6.53711V17.4541L6.60568 17.4652ZM6.12055 17.4657C2.63959 16.1634 0.154694 12.8204 0.154694 8.84266C0.154694 4.57563 3.8876 0 9.13978 0H15.3356C19.4424 0 22.9201 2.74775 24.0714 6.52814L17.9405 6.53647C21.4264 7.83605 23.9108 11.1814 23.9108 15.1574C23.9108 19.4245 20.1779 24.0001 14.9257 24.0001H8.7299C4.62311 24.0001 1.14539 21.2523 0 17.472L6.12055 17.4657ZM17.0857 11.9887C17.0857 14.8374 14.8365 17.1519 12.0591 17.1519C9.28165 17.1519 7.03241 14.8433 7.03241 11.9887C7.03241 9.13417 9.28165 6.82558 12.0591 6.82558C14.8365 6.82558 17.0857 9.1401 17.0857 11.9887Z"
+              ></path>
+            </svg>
+          </a>
+
+          <p>&copy; 2025 Symbol Audio.</p>
+        </div>
+      </div>
+    </footer>
 
   <script src="scripts/scripts.js"></script>
 </body>
