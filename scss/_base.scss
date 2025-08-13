@@ -7,7 +7,9 @@
   // supremeLL Bold
   //   for H1
   font-family: "supreme bold";
-  src: url("../assets//fonts/Supreme_LL/SupremeLL-Bold.otf");
+  src: url("../assets//fonts/Supreme_LL/SupremeLL-Medium.otf");
+  // src: url("../assets//fonts/Supreme_LL/SupremeLL-Regular.otf");
+  // src: url("../assets//fonts/Supreme_LL/SupremeLL-Bold.otf");
 }
 
 @font-face {
@@ -48,7 +50,7 @@ h6 {
 
 @mixin grid($columns: repeat(2, 1fr), $rows: auto, $gap: 0.625rem) {
   display: grid;
-  grid-template-columns: $column;
-  grid-template-rows: $row;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
   gap: $gap;
 }
