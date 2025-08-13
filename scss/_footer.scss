@@ -107,6 +107,7 @@ footer {
 }
 @media (min-width: 48em) {
   footer {
+    padding: 20px;
     form {
       @include flex(row);
       font-size: 2.125rem;

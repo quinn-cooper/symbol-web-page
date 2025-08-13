@@ -439,6 +439,14 @@ h6 {
   vertical-align: middle;
 }
 
+@media (min-width: 48em) {
+  .about-us-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+    padding: 20px 20px 150px;
+  }
+}
 footer {
   padding: 0.625rem;
   color: #c72a00;
@@ -525,6 +533,9 @@ footer .footer-logo {
   }
 }
 @media (min-width: 48em) {
+  footer {
+    padding: 20px;
+  }
   footer form {
     display: flex;
     flex-direction: row;
