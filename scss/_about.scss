@@ -50,3 +50,13 @@
     }
   }
 }
+
+@media (min-width: 48em) {
+  .about-us-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+
+    padding: 20px 20px 150px;
+  }
+}
