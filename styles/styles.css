@@ -406,6 +406,7 @@ h6 {
   padding: 10px;
 }
 .landing-section nav {
+  position: relative;
   font-family: "supreme bold", sans-serif;
   color: #c72a00;
   position: fixed;
@@ -414,6 +415,7 @@ h6 {
   right: 0;
   padding: 10px;
   z-index: 999999;
+  transition: 0.3s ease-in-out;
 }
 .landing-section nav ul {
   display: flex;
@@ -422,10 +424,17 @@ h6 {
   align-items: center;
   list-style: none;
 }
+.landing-section nav ul li a {
+  display: flex;
+  align-items: center;
+}
 .landing-section nav ul li a img {
   filter: brightness(0) saturate(100%) invert(17%) sepia(78%) saturate(3873%) hue-rotate(18deg) brightness(99%) contrast(106%);
   width: 100%;
   max-width: 90px;
+}
+.landing-section nav ul li button:hover {
+  cursor: pointer;
 }
 .landing-section nav ul .symbol-home {
   opacity: 0;
@@ -435,6 +444,27 @@ h6 {
   color: inherit;
   background-color: transparent;
   border: none;
+}
+.landing-section nav .menu {
+  position: fixed;
+  top: 2.5rem;
+  left: 0;
+  width: 100%;
+  height: 10rem;
+  min-height: 100vh;
+  z-index: 10;
+  background-color: #c72a00;
+  color: #fffcda;
+  font-size: 34px;
+}
+.landing-section nav .menu ul {
+  margin-top: 100px;
+  padding-left: 10px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 .landing-section .heading-container {
   position: absolute;
@@ -468,8 +498,14 @@ h6 {
   background-color: #fffcda;
 }
 
-.home-active {
-  opacity: 1;
+.landing-section .nav-hover {
+  background-color: #c72a00;
+}
+.landing-section .nav-hover ul {
+  color: #fffcda;
+}
+.landing-section .nav-hover ul img {
+  filter: brightness(0) saturate(100%) invert(97%) sepia(13%) saturate(1924%) hue-rotate(301deg) brightness(119%) contrast(104%);
 }
 
 .about-us-section {

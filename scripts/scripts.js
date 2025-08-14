@@ -19,3 +19,11 @@ window.addEventListener("scroll", () => {
     symbolHome.style.opacity = 0;
   }
 });
+
+nav.addEventListener("mouseover", () => {
+  nav.classList.add("nav-hover");
+});
+
+nav.addEventListener("mouseout", () => {
+  nav.classList.remove("nav-hover");
+});

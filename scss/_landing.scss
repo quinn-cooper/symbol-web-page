@@ -11,6 +11,7 @@
   // padding: calc(45px + 18vw) 10px 10px;
 
   nav {
+    position: relative;
     font-family: "supreme bold", sans-serif;
     color: $primary-color;
 
@@ -22,6 +23,7 @@
     padding: 10px;
 
     z-index: 999999;
+    transition: 0.3s ease-in-out;
     ul {
       @include flex(row, space-between);
       list-style: none;
@@ -32,10 +34,19 @@
         // }
 
         a {
+          display: flex;
+          align-items: center;
+
           img {
             filter: $filter-primary;
             width: 100%;
             max-width: 90px;
+          }
+        }
+
+        button {
+          &:hover {
+            cursor: pointer;
           }
         }
       }
@@ -49,6 +60,31 @@
         color: inherit;
         background-color: transparent;
         border: none;
+      }
+    }
+    .menu {
+      position: fixed;
+      // position: absolute;
+      // bottom: -500%;
+      // bottom: -43rem;
+      top: 2.5rem;
+      left: 0;
+      width: 100%;
+      height: 10rem;
+      min-height: 100vh;
+      z-index: 10;
+      background-color: $primary-color;
+      color: $background-color;
+      font-size: 34px;
+
+      ul {
+        margin-top: 100px;
+        padding-left: 10px;
+        padding-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
       }
     }
   }
@@ -98,11 +134,22 @@
   }
 }
 
+// active states
 .nav-active {
   border-bottom: 1px solid $primary-color;
   background-color: $background-color;
 }
 
-.home-active {
-  opacity: 1;
+.landing-section {
+  .nav-hover {
+    background-color: $primary-color;
+
+    ul {
+      color: $background-color;
+
+      img {
+        filter: $filter-bg;
+      }
+    }
+  }
 }
