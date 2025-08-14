@@ -399,6 +399,79 @@ h6 {
   color: #c72a00;
 }
 
+.landing-section {
+  min-height: 100vh;
+  min-height: 150vh;
+  position: relative;
+  padding: 10px;
+}
+.landing-section nav {
+  font-family: "supreme bold", sans-serif;
+  color: #c72a00;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  right: 0;
+  padding: 10px;
+  z-index: 999999;
+}
+.landing-section nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.landing-section nav ul li a img {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(78%) saturate(3873%) hue-rotate(18deg) brightness(99%) contrast(106%);
+  width: 100%;
+  max-width: 90px;
+}
+.landing-section nav ul .symbol-home {
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+.landing-section nav ul button {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+}
+.landing-section .heading-container {
+  position: absolute;
+  padding: 10px;
+  top: 4.75rem;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.landing-section .heading-container .symbol-h1 {
+  fill: #c72a00;
+  margin-top: 60px;
+}
+.landing-section picture {
+  position: sticky;
+  top: 0;
+  padding: calc(45px + 18vw) 0 20px;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  z-index: -1;
+}
+.landing-section picture img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.nav-active {
+  border-bottom: 1px solid #c72a00;
+  background-color: #fffcda;
+}
+
+.home-active {
+  opacity: 1;
+}
+
 .about-us-section {
   padding: 0 10px 50px;
 }

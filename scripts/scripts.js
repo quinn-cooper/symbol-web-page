@@ -1,0 +1,21 @@
+const symbol = document.querySelector(".symbol-h1");
+const nav = document.querySelector("nav");
+const symbolHome = document.querySelector(".symbol-home");
+
+window.addEventListener("scroll", () => {
+  let scrollPos = window.scrollY;
+
+  console.log(scrollPos);
+
+  // makes it scroll up when the user scrolls down
+  symbol.style.transform = `translateY(${scrollPos * -0.75}px)`;
+
+  if (scrollPos >= 100) {
+    console.log("i am true");
+    nav.classList.add("nav-active");
+    symbolHome.style.opacity = 1;
+  } else {
+    nav.classList.remove("nav-active");
+    symbolHome.style.opacity = 0;
+  }
+});
