@@ -51,3 +51,11 @@ for (let i = 0; i < images.length; i++) {
     picture[i].style.opacity = "1";
   });
 }
+
+nav.addEventListener("mouseover", () => {
+  nav.classList.add("nav-hover");
+});
+
+nav.addEventListener("mouseout", () => {
+  nav.classList.remove("nav-hover");
+});
