@@ -7,14 +7,19 @@
   // supremeLL Bold
   //   for H1
   font-family: "supreme bold";
-  src: url("../assets//fonts/Supreme_LL/SupremeLL-Medium.otf");
+  src: url("../assets/fonts/Supreme_LL/SupremeLL-Medium.otf");
 }
 
 
 @font-face {
   // learn more and about us
   font-family: "supreme bold flat";
-  src: url("../assets//fonts/Supreme_LL/SupremeLL-BoldFlat.otf");
+  src: url("../assets/fonts/Supreme_LL/SupremeLL-BoldFlat.otf");
+}
+
+@font-face {
+  font-family: "supreme book";
+  src: url("../assets/fonts/Supreme_LL/SupremeLL-Book.otf")
 }
 
 $background-color: #fffcda;
