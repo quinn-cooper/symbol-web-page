@@ -554,7 +554,7 @@ a:visited, a:active, a:hover, a:focus {
   grid-row: 1/2;
 }
 .grid-container .grid-item.record-stand img.record-stand {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .grid-container .grid-item.unison-stand {
   grid-column: 2/3;
@@ -591,12 +591,6 @@ a:visited, a:active, a:hover, a:focus {
   .grid-container .grid-item.record-stand {
     grid-column: 2/3;
     grid-row: 1/2;
-  }
-  .grid-container .grid-item.record-stand img.record-stand {
-    margin-top: 30px;
-    width: 300px;
-    height: auto;
-    object-fit: fill;
   }
   .grid-container .grid-item.record-stand input[value=yellow] {
     background-color: #efb627;

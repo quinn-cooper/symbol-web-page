@@ -1,6 +1,5 @@
 
 // Hide the radio buttons on site load
-// document.querySelectorAll('.item-form').forEach(radioBtn => radioBtn.style.display = 'none');
 
 // Radio buttons slide up on hover
 const radioBtn = document.getElementsByName('item-color');
