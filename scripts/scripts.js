@@ -3,21 +3,21 @@ const nav = document.querySelector("nav");
 const symbolHome = document.querySelector(".symbol-home");
 const menuBtn = document.querySelector(".landing-section button");
 const menu = document.querySelector(".menu");
+const form = document.querySelector("form");
 
 // desktop elements
 const symbolDesktop = document.querySelector(".symbol-home-desktop");
 const logoDesktop = document.querySelector(".logo-svg");
+const footerUl = document.querySelectorAll(".footer-nav ul");
+const learnMore = document.querySelector(".about-info a");
 
 window.addEventListener("scroll", () => {
   let scrollPos = window.scrollY;
-
-  console.log(scrollPos);
 
   // makes it scroll up when the user scrolls down
   symbol.style.transform = `translateY(${scrollPos * -0.75}px)`;
 
   if (scrollPos >= 100) {
-    console.log("i am true");
     nav.classList.add("nav-active");
     symbolHome.style.opacity = 1;
     symbolDesktop.style.opacity = 1;
@@ -45,7 +45,6 @@ menuBtn.addEventListener("click", () => {
   if (menuBtn.textContent === "Menu") {
     menuBtn.textContent = "Close";
     nav.classList.add("nav-hover");
-    // menu.style.left = 0;
     menu.classList.add("menu-active");
 
     symbolHome.style.opacity = 1;
@@ -58,4 +57,29 @@ menuBtn.addEventListener("click", () => {
 
     menu.classList.remove("menu-active");
   }
+});
+
+// about section
+learnMore.addEventListener("mouseover", () => {
+  learnMore.style.borderBottom = "none";
+});
+learnMore.addEventListener("mouseout", () => {
+  setTimeout(() => {
+    learnMore.style.borderBottom = "2px solid";
+  }, 600);
+});
+
+// footer elements
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+footerUl.forEach((ul) => {
+  ul.addEventListener("mouseover", () => {
+    ul.classList.add("footer-hover");
+  });
+
+  ul.addEventListener("mouseout", () => {
+    ul.classList.remove("footer-hover");
+  });
 });
