@@ -17,7 +17,11 @@
     <main>
       <section class="landing-section">
         <nav>
-          <ul>
+          <a href="#" class="symbol-home-desktop nav-desktop">
+            <img src="./assets/img/svgs/symbol-v1.svg" alt="Symbol Home Link" />
+          </a>
+
+          <ul class="nav-mobile">
             <li><button>Menu</button></li>
             <li class="symbol-home">
               <a href="#">
@@ -29,7 +33,27 @@
             </li>
             <li>Cart(0)</li>
           </ul>
-          <div class="menu">
+
+          <ul class="desktop-ul nav-desktop">
+            <li>
+              <a href="#">Shop <span>+</span></a>
+            </li>
+            <li>
+              <a href="#">Learn <span>+</span></a>
+            </li>
+            <li><a href="#">Trade</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <span class="cart nav-desktop">Cart(0)</span>
+          <svg viewBox="0 0 25 24" class="logo-svg nav-desktop">
+            <!-- referenced from symbols website -->
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M6.60568 17.4652V6.55187L17.4657 6.53711V17.4541L6.60568 17.4652ZM6.12055 17.4657C2.63959 16.1634 0.154694 12.8204 0.154694 8.84266C0.154694 4.57563 3.8876 0 9.13978 0H15.3356C19.4424 0 22.9201 2.74775 24.0714 6.52814L17.9405 6.53647C21.4264 7.83605 23.9108 11.1814 23.9108 15.1574C23.9108 19.4245 20.1779 24.0001 14.9257 24.0001H8.7299C4.62311 24.0001 1.14539 21.2523 0 17.472L6.12055 17.4657ZM17.0857 11.9887C17.0857 14.8374 14.8365 17.1519 12.0591 17.1519C9.28165 17.1519 7.03241 14.8433 7.03241 11.9887C7.03241 9.13417 9.28165 6.82558 12.0591 6.82558C14.8365 6.82558 17.0857 9.1401 17.0857 11.9887Z"
+            ></path>
+          </svg>
+          <div class="menu nav-mobile">
             <ul>
               <li><a href="#">Shop</a></li>
               <li><a href="#">Learn</a></li>
