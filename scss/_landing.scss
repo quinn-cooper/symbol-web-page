@@ -11,6 +11,9 @@
   // padding: calc(45px + 18vw) 10px 10px;
 
   nav {
+    .nav-desktop {
+      display: none;
+    }
     position: relative;
     font-family: "supreme bold", sans-serif;
     color: $primary-color;
@@ -60,6 +63,12 @@
         color: inherit;
         background-color: transparent;
         border: none;
+      }
+    }
+    .logo-svg {
+      width: 34px;
+      path {
+        fill: $background-color;
       }
     }
 
@@ -178,6 +187,7 @@
 .landing-section {
   .nav-hover {
     background-color: $primary-color;
+    border-color: 1px solid $background-color;
 
     ul {
       color: $background-color;
@@ -185,6 +195,115 @@
       img {
         filter: $filter-bg;
       }
+    }
+  }
+}
+
+@media (min-width: 58.75em) {
+  .landing-section {
+    padding: 64.0390625px 20px 20px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    .nav-hover {
+      color: $background-color;
+
+      .symbol-home-desktop {
+        img {
+          filter: $filter-bg;
+        }
+      }
+      .desktop-ul {
+        color: $background-color;
+
+        li {
+          opacity: 0.75;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .logo-svg {
+        filter: $filter-bg;
+      }
+    }
+
+    nav {
+      .nav-mobile {
+        display: none;
+      }
+
+      .nav-desktop {
+        display: block;
+      }
+
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas: "home home ... ul ul ul ul ... ... ... cart logo";
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+
+      .symbol-home-desktop {
+        opacity: 0;
+        grid-area: home;
+        max-width: 88px;
+        transition: 0.3s ease-in;
+        img {
+          filter: $filter-primary;
+        }
+      }
+
+      .desktop-ul {
+        grid-area: ul;
+        display: flex;
+        font-size: 14px;
+        color: $primary-color;
+        li {
+          width: 100%;
+          margin: 0 30px 0 0;
+
+          a {
+            text-decoration: none;
+            &:visited {
+              color: inherit;
+            }
+
+            span {
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+
+      .cart {
+        grid-area: cart;
+        justify-self: flex-end;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .logo-svg {
+        opacity: 0;
+        justify-self: flex-end;
+        grid-area: logo;
+        width: 34px;
+        filter: $filter-primary;
+      }
+    }
+
+    .heading-container {
+      padding: 0 20px;
+      margin-top: 30px;
+      top: -5%;
+    }
+    picture {
+      grid-column: 4 / 10;
+      padding: 0;
     }
   }
 }

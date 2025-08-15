@@ -4,6 +4,10 @@ const symbolHome = document.querySelector(".symbol-home");
 const menuBtn = document.querySelector(".landing-section button");
 const menu = document.querySelector(".menu");
 
+// desktop elements
+const symbolDesktop = document.querySelector(".symbol-home-desktop");
+const logoDesktop = document.querySelector(".logo-svg");
+
 window.addEventListener("scroll", () => {
   let scrollPos = window.scrollY;
 
@@ -16,9 +20,13 @@ window.addEventListener("scroll", () => {
     console.log("i am true");
     nav.classList.add("nav-active");
     symbolHome.style.opacity = 1;
+    symbolDesktop.style.opacity = 1;
+    logoDesktop.style.opacity = 1;
   } else {
     nav.classList.remove("nav-active");
     symbolHome.style.opacity = 0;
+    symbolDesktop.style.opacity = 0;
+    logoDesktop.style.opacity = 0;
   }
 });
 
@@ -57,6 +65,8 @@ for (let i = 0; i < images.length; i++) {
 nav.addEventListener("mouseover", () => {
   nav.classList.add("nav-hover");
   symbolHome.style.opacity = 1;
+  symbolDesktop.style.opacity = 1;
+  logoDesktop.style.opacity = 1;
 });
 
 nav.addEventListener("mouseout", () => {
@@ -64,8 +74,6 @@ nav.addEventListener("mouseout", () => {
 });
 
 menuBtn.addEventListener("click", () => {
-  console.log("hi");
-
   if (menuBtn.textContent === "Menu") {
     menuBtn.textContent = "Close";
     nav.classList.add("nav-hover");
@@ -81,7 +89,5 @@ menuBtn.addEventListener("click", () => {
     document.body.style.overflow = "";
 
     menu.classList.remove("menu-active");
-
-    // menu.style.left = "-100rem";
   }
 });
