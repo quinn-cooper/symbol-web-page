@@ -1,6 +1,8 @@
 const symbol = document.querySelector(".symbol-h1");
 const nav = document.querySelector("nav");
 const symbolHome = document.querySelector(".symbol-home");
+const menuBtn = document.querySelector(".landing-section button");
+const menu = document.querySelector(".menu");
 
 window.addEventListener("scroll", () => {
   let scrollPos = window.scrollY;
@@ -22,8 +24,32 @@ window.addEventListener("scroll", () => {
 
 nav.addEventListener("mouseover", () => {
   nav.classList.add("nav-hover");
+  symbolHome.style.opacity = 1;
 });
 
 nav.addEventListener("mouseout", () => {
   nav.classList.remove("nav-hover");
+});
+
+menuBtn.addEventListener("click", () => {
+  console.log("hi");
+
+  if (menuBtn.textContent === "Menu") {
+    menuBtn.textContent = "Close";
+    nav.classList.add("nav-hover");
+    // menu.style.left = 0;
+    menu.classList.add("menu-active");
+
+    symbolHome.style.opacity = 1;
+    document.body.style.overflow = "hidden";
+  } else {
+    menuBtn.textContent = "Menu";
+    nav.classList.remove("nav-hover");
+    symbolHome.style.opacity = 0;
+    document.body.style.overflow = "";
+
+    menu.classList.remove("menu-active");
+
+    // menu.style.left = "-100rem";
+  }
 });

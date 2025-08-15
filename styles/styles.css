@@ -448,7 +448,7 @@ h6 {
 .landing-section nav .menu {
   position: fixed;
   top: 2.5rem;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 10rem;
   min-height: 100vh;
@@ -456,6 +456,10 @@ h6 {
   background-color: #c72a00;
   color: #fffcda;
   font-size: 34px;
+  transition: left 0.4s ease-in-out;
+}
+.landing-section nav .menu.menu-active {
+  left: 0;
 }
 .landing-section nav .menu ul {
   margin-top: 100px;
@@ -465,6 +469,26 @@ h6 {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+}
+.landing-section nav .menu ul a {
+  text-decoration: none;
+}
+.landing-section nav .menu ul a:visited {
+  color: inherit;
+}
+.landing-section nav .menu ul li:nth-of-type(1) a::after,
+.landing-section nav .menu ul li:nth-of-type(2) a::after {
+  display: inline-block;
+  content: "";
+  background-image: url("../assets//img/svgs/angle-right.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 5px;
+  width: 15px;
+  height: 15px;
+  margin-left: 1px;
+  vertical-align: middle;
 }
 .landing-section .heading-container {
   position: absolute;
@@ -497,7 +521,6 @@ h6 {
   border-bottom: 1px solid #c72a00;
   background-color: #fffcda;
 }
-
 .landing-section .nav-hover {
   background-color: #c72a00;
 }
