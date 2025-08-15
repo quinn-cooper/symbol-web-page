@@ -492,11 +492,12 @@ h6 {
 }
 .landing-section .heading-container {
   position: absolute;
-  padding: 10px;
-  top: 4.75rem;
-  left: 50%;
+  padding: 0 10px;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  transform: translate(-50%, -50%);
+  height: 60vh;
 }
 .landing-section .heading-container .symbol-h1 {
   fill: #c72a00;
@@ -521,6 +522,7 @@ h6 {
   border-bottom: 1px solid #c72a00;
   background-color: #fffcda;
 }
+
 .landing-section .nav-hover {
   background-color: #c72a00;
 }

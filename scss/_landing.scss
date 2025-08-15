@@ -122,14 +122,18 @@
 
   .heading-container {
     position: absolute;
-    padding: 10px;
+    // padding: 10px;
+    padding: 0 10px;
     // top: 15%;
-    top: 4.75rem;
-    // top: 62%;
-    left: 50%;
+    // top: 4.75rem;
+    top: 0;
+    // left: 50%;
+    left: 0;
+    right: 0;
     width: 100%;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
     // height: 150vh;
+    height: 60vh;
 
     // height: 10rem;
     .symbol-h1 {
@@ -169,9 +173,6 @@
 .nav-active {
   border-bottom: 1px solid $primary-color;
   background-color: $background-color;
-
-  .symbol-home {
-  }
 }
 
 .landing-section {
