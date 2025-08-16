@@ -1,0 +1,162 @@
+@use "base" as *;
+
+footer {
+  padding: $padding-sm;
+  color: $primary-color;
+  font-family: "supreme bold", sans-serif;
+
+  form {
+    width: 100%;
+    font-size: 1.5rem;
+
+    @include flex(column, center, flex-start);
+
+    input {
+      border: none;
+      color: inherit;
+      background-color: $background-color;
+      caret-color: $primary-color;
+
+      width: 100%;
+      border-bottom: 1px solid $primary-color;
+      padding: 0.75rem 0;
+
+      &::placeholder {
+        color: $primary-color;
+        opacity: 0.5;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      color: inherit;
+      border: none;
+      background-color: transparent;
+      padding: 0.75rem 0;
+    }
+  }
+
+  ul,
+  p {
+    font-size: 0.875rem;
+  }
+
+  .footer-nav {
+    font-family: "supreme bold", sans-serif;
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    ul {
+      list-style: none;
+
+      margin-bottom: 30px;
+
+      li {
+        margin: 8px 0;
+      }
+      a {
+        color: $primary-color;
+        text-decoration: none;
+
+        padding: 0.3125rem 0;
+      }
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  svg {
+    width: 100%;
+    max-width: 120px;
+    path {
+      fill: $primary-color;
+    }
+  }
+
+  .footer-logo {
+    display: grid;
+    row-gap: 40px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 34.375em) {
+  footer {
+    .footer-nav,
+    .footer-logo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .footer-nav {
+      div {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .footer-logo {
+      align-items: flex-end;
+    }
+  }
+}
+@media (min-width: 48em) {
+  footer {
+    padding: 20px;
+    form {
+      @include flex(row);
+      font-size: 2.125rem;
+
+      button {
+        border-bottom: 1px solid;
+      }
+    }
+
+    .footer-info {
+      display: grid;
+      grid-template-areas: "logo nav";
+
+      .footer-nav {
+        grid-area: nav;
+
+        display: flex;
+
+        div {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+
+          ul {
+            &:nth-of-type(2) {
+              order: -1;
+            }
+          }
+        }
+
+        p {
+          display: block;
+        }
+      }
+
+      .footer-logo {
+        display: grid;
+        align-items: center;
+        padding: 0;
+        p {
+          display: none;
+        }
+      }
+    }
+    svg {
+      max-width: 148px;
+    }
+  }
+}
