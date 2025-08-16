@@ -11,6 +11,7 @@ const logoDesktop = document.querySelector(".logo-svg");
 const footerUl = document.querySelectorAll(".footer-nav ul");
 const learnMore = document.querySelector(".about-info a");
 
+// window scroll listener
 window.addEventListener("scroll", () => {
   let scrollPos = window.scrollY;
 
@@ -46,22 +47,34 @@ radioBtn.forEach(function (radio) {
   });
 });
 
-const images = document.getElementsByClassName("image");
+// featured section hover
+// const images = document.getElementsByClassName("image");
+const images = document.querySelectorAll(".image");
 
-for (let i = 0; i < images.length; i++) {
-  const imageNames = document.getElementsByTagName("h5");
-  const picture = document.getElementsByTagName("img");
-  images[i].addEventListener("mouseover", function () {
-    // imageNames[i].style.textDecoration = "underline";
-    picture[i].style.opacity = "0.5";
+images.forEach((img) => {
+  const singleImg = img.querySelector("img");
+  img.addEventListener("mouseover", () => {
+    singleImg.style.opacity = ".5";
   });
-
-  images[i].addEventListener("mouseout", function () {
-    // imageNames[i].style.textDecoration = "none";
-    picture[i].style.opacity = "1";
+  img.addEventListener("mouseout", () => {
+    singleImg.style.opacity = "1";
   });
-}
+});
+// for (let i = 0; i < images.length; i++) {
+//   const imageNames = document.getElementsByTagName("h5");
+//   const picture = document.getElementsByTagName("img");
+//   images[i].addEventListener("mouseover", function () {
+//     // imageNames[i].style.textDecoration = "underline";
+//     picture[i].style.opacity = "0.5";
+//   });
 
+//   images[i].addEventListener("mouseout", function () {
+//     // imageNames[i].style.textDecoration = "none";
+//     picture[i].style.opacity = "1";
+//   });
+// }
+
+// nav events
 nav.addEventListener("mouseover", () => {
   nav.classList.add("nav-hover");
   symbolHome.style.opacity = 1;
@@ -73,6 +86,7 @@ nav.addEventListener("mouseout", () => {
   nav.classList.remove("nav-hover");
 });
 
+// opens and closes menu
 menuBtn.addEventListener("click", () => {
   if (menuBtn.textContent === "Menu") {
     menuBtn.textContent = "Close";

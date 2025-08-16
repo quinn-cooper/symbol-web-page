@@ -1,198 +1,179 @@
 @use "base" as *;
 
 .featured-section {
-    padding: $padding-sm;
+  padding: $padding-sm;
+  padding-bottom: 2.75rem;
+  @include flex($direction: column, $justify: left, $align: left);
+  row-gap: 3.5rem;
+  overflow: hidden;
+  display: flow-root;
+
+  .featured-block {
     padding-bottom: 2.75rem;
-    @include flex($direction: column, $justify: left, $align: left);
-    row-gap: 3.5rem;
-    overflow: hidden;
-    display: flow-root;
 
-    .featured-block {
-        padding-bottom: 2.75rem;
+    line-height: 2rem;
 
-        line-height: 2rem;
+    h2 {
+      line-height: 2.5rem;
+      display: inline;
+      font-size: 3.75rem;
+      width: 100%;
+      max-width: 100%;
+      font-family: supreme bold, sans-serif;
+      word-wrap: break-word;
+      white-space: normal;
 
-        h2 {
-            line-height: 2.5rem;
-            display: inline;
-            font-size: 3.75rem;
+      .super {
+        font-size: 1.125rem;
+        font-family: supreme bold, sans-serif;
+        display: none;
+      }
+    }
+
+    p {
+      line-height: 2.5rem;
+      font-size: 1.125rem;
+      font-family: supreme bold, sans-serif;
+      color: $primary-color;
+    }
+  }
+
+  .images {
+    .image {
+      // text-decoration: none;
+      // transition: text-decoration 0.3s;
+      position: relative;
+      cursor: pointer;
+
+      img {
+        transition: 0.2s ease-in;
+        display: block;
+        width: 100%;
+      }
+
+      .figure-caption {
+        @include flex($justify: left);
+        align-items: baseline;
+        padding: 0.5rem 0;
+        margin-bottom: 2rem;
+
+        h5 {
+          font-size: 1.125rem;
+          font-family: supreme bold, sans-serif;
+          position: relative;
+          display: inline-block;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
             width: 100%;
-            max-width: 100%;
-            font-family: supreme bold, sans-serif;
-            word-wrap: break-word;
-            white-space: normal;
-
-            .super {
-                font-size: 1.125rem;
-                font-family: supreme bold, sans-serif;
-                display: none;
-            }
-
+            height: 2px;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+          }
         }
+      }
 
-        p {
-            line-height: 2.5rem;
-            font-size: 1.125rem;
-            font-family: supreme bold, sans-serif;
-            color: $primary-color;
+      &:hover {
+        .figure-caption h5::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
         }
+      }
+
+      p {
+        font-size: 0.9375rem;
+        font-family: chalet, sans-serif;
+        color: $primary-color;
+        padding: 0 0 0 0.468rem;
+        opacity: 0.5;
+      }
     }
-
-    .images {
-        .image {
-            // text-decoration: none;
-            // transition: text-decoration 0.3s;
-            position: relative;
-            cursor: pointer;
-
-            img {
-                display: block;
-                width: 100%;
-            }
-
-            .figure-caption {
-                @include flex($justify: left);
-                align-items: baseline;
-                padding: 0.5rem 0;
-                margin-bottom: 2rem;
-
-                h5 {
-                    font-size: 1.125rem;
-                    font-family: supreme bold, sans-serif;
-                    position: relative;
-                    display: inline-block;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -2px;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background-color: currentColor;
-                        transform: scaleX(0);
-                        transform-origin: bottom right;
-                        transition: transform 0.3s ease;
-                    }
-
-                }
-            }
-
-            &:hover {
-                .figure-caption h5::after {
-                    transform: scaleX(1);
-                    transform-origin: bottom left;
-                }
-            }
-
-
-            p {
-                font-size: 0.9375rem;
-                font-family: chalet, sans-serif;
-                color: $primary-color;
-                padding: 0 0 0 0.468rem;
-                opacity: 0.5;
-            }
-        }
-    }
-
+  }
 }
 
-
-
-
-
-
 @media (min-width: 26.5625rem) {
-    .featured-section {
-
-
-        .images {
-            .image {
-                .figure-caption {
-                    padding: 1rem 0;
-                }
-            }
-
+  .featured-section {
+    .images {
+      .image {
+        .figure-caption {
+          padding: 1rem 0;
         }
+      }
     }
-
-
-
+  }
 }
 
 @media (min-width: 38.125rem) {
-    .featured-section {
-        .featured-block {
-            padding-bottom: 0;
-            margin-bottom: 1.25rem;
-            position: relative;
-            display: inline-block;
+  .featured-section {
+    .featured-block {
+      padding-bottom: 0;
+      margin-bottom: 1.25rem;
+      position: relative;
+      display: inline-block;
 
-            h2 {
-
-                .super {
-                    display: inline-block;
-                    position: absolute;
-                    top: 0;
-                    right: -0.75rem;
-                    vertical-align: super;
-                    transform: translate(50%, -40%);
-                }
-            }
-
-            p {
-                display: none;
-            }
+      h2 {
+        .super {
+          display: inline-block;
+          position: absolute;
+          top: 0;
+          right: -0.75rem;
+          vertical-align: super;
+          transform: translate(50%, -40%);
         }
+      }
+
+      p {
+        display: none;
+      }
     }
+  }
 }
 
 @media (min-width: 48rem) {
-    .featured-section {
-        // .featured-block {
-        //     padding-bottom: 0;
-        // }
+  .featured-section {
+    // .featured-block {
+    //     padding-bottom: 0;
+    // }
 
-        .images {
-            @include grid($column: repeat(3, 1fr), $row: repeat(2, 1fr), $gap: 0.625rem);
-        }
+    .images {
+      @include grid(
+        $column: repeat(3, 1fr),
+        $row: repeat(2, 1fr),
+        $gap: 0.625rem
+      );
     }
+  }
 }
 
 @media (min-width: 62.5rem) {
-    .featured-section {
-        padding: 1.25rem 1.25rem 3.5rem;
+  .featured-section {
+    padding: 1.25rem 1.25rem 3.5rem;
 
-        .images {
-            @include grid($column: repeat(4, 1fr), $row: 1fr, $gap: 0.625rem);
+    .images {
+      @include grid($column: repeat(4, 1fr), $row: 1fr, $gap: 0.625rem);
 
-            image {
-                padding-bottom: 0;
-            }
-        }
-
-
+      image {
+        padding-bottom: 0;
+      }
     }
+  }
 }
 
 @media (min-width: 90rem) {
-    .featured-section {
-        .images {
-            .image {
-
-                .figure-caption {
-                    h5 {
-                        font-size: 1.25rem;
-                    }
-                }
-
-
-            }
+  .featured-section {
+    .images {
+      .image {
+        .figure-caption {
+          h5 {
+            font-size: 1.25rem;
+          }
         }
+      }
     }
-
-
-
+  }
 }

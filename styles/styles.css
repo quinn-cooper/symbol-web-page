@@ -678,6 +678,7 @@ h6 {
   cursor: pointer;
 }
 .featured-section .images .image img {
+  transition: 0.2s ease-in;
   display: block;
   width: 100%;
 }
