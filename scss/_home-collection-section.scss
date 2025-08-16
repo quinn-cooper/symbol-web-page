@@ -1,0 +1,100 @@
+@use "base" as *;
+.home-collection-section {
+  padding: 10px;
+
+  .details {
+    h3 {
+      font-family: supreme bold;
+      font-size: 3rem;
+      padding-bottom: 1rem;
+      line-height: 3.25rem;
+    }
+    h4 {
+      font-size: 1.125rem;
+      font-family: supreme bold;
+      line-height: 1.25rem;
+      padding: 0 0 1.25rem;
+      font-weight: lighter;
+      letter-spacing: -0.02em;
+    }
+    img {
+      padding: 1.25rem 0;
+    }
+  }
+  .introducting-symbol {
+    img {
+      padding-bottom: 10px;
+    }
+
+    .like-h1 {
+      color: $primary-color;
+      font-size: 3.5rem;
+      font-family: "supreme bold";
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 4rem;
+    }
+  }
+}
+@media (min-width: 48em) {
+  .home-collection-section {
+    .details {
+      h3 {
+        letter-spacing: -0.02em;
+      }
+    }
+  }
+}
+
+@media (min-width: 58.75em) {
+  .home-collection-section {
+    padding: 20px 20px 200px;
+
+    .introducting-symbol {
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+  }
+}
+@media (min-width: 62.5em) {
+  .home-collection-section {
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: start;
+      grid-template-areas:
+        ".  myArea "
+        "h4area h4area";
+
+      h3 {
+        grid-area: myArea;
+        letter-spacing: -0.02em;
+        font-size: 3.25rem;
+      }
+      h4 {
+        grid-area: h4area;
+        font-size: 1.5488rem;
+        line-height: 1.75rem;
+      }
+    }
+    .introducting-symbol {
+      @include grid($column: repeat(2, 1fr), $row: 1fr, $gap: 1.25rem);
+      // padding: 1.25rem;
+      .like-h1 {
+        color: $primary-color;
+        font-size: 3.75rem;
+        font-family: supreme bold;
+      }
+    }
+  }
+}
+@media (min-width: 90em) {
+  .home-collection-section {
+    .details {
+      h4 {
+        font-size: 2.125rem;
+        line-height: 1.265;
+      }
+    }
+  }
+}

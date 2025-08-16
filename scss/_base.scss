@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "chalet";
+  src: url("../assets/fonts/chalet/Chalet\ LondonNineteenSixty\ Regular.otf");
+}
+
+@font-face {
+  // supremeLL Bold
+  //   for H1
+  font-family: "supreme bold";
+  src: url("../assets/fonts/Supreme_LL/SupremeLL-Medium.otf");
+}
+
+@font-face {
+  // learn more and about us
+  font-family: "supreme bold flat";
+  src: url("../assets/fonts/Supreme_LL/SupremeLL-BoldFlat.otf");
+}
+
+@font-face {
+  font-family: "supreme book";
+  src: url("../assets/fonts/Supreme_LL/SupremeLL-Book.otf");
+}
+
+$background-color: #fffcda;
+$primary-color: #c72a00;
+$white-color: #ffffff;
+$highlight-color: #5a7fec;
+$border-container-color: #fdf5f1;
+$sale-bg-color: #fbeae5;
+$filter-primary: brightness(0) saturate(100%) invert(17%) sepia(78%)
+  saturate(3873%) hue-rotate(18deg) brightness(99%) contrast(106%);
+$filter-bg: brightness(0) saturate(100%) invert(97%) sepia(13%) saturate(1924%)
+  hue-rotate(301deg) brightness(119%) contrast(104%);
+
+$padding-sm: 0.625rem;
+$padding-lg: 1.25rem;
+
+body {
+  background-color: $background-color;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "supreme bold";
+  color: $primary-color;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($column: repeat(2, 1fr), $row: auto, $gap: 0.625rem) {
+  display: grid;
+  grid-template-columns: $column;
+  grid-template-rows: $row;
+  gap: $gap;
+}
