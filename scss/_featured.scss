@@ -40,8 +40,6 @@
 
   .images {
     .image {
-      // text-decoration: none;
-      // transition: text-decoration 0.3s;
       position: relative;
       cursor: pointer;
 
@@ -100,7 +98,7 @@
   }
 }
 
-@media (min-width: 26.5625rem) {
+@media (min-width: 26.5625em) {
   .featured-section {
     .images {
       .image {
@@ -112,7 +110,7 @@
   }
 }
 
-@media (min-width: 38.125rem) {
+@media (min-width: 38.125em) {
   .featured-section {
     .featured-block {
       padding-bottom: 0;
@@ -138,12 +136,8 @@
   }
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 48em) {
   .featured-section {
-    // .featured-block {
-    //     padding-bottom: 0;
-    // }
-
     .images {
       @include grid(
         $column: repeat(3, 1fr),
@@ -156,17 +150,16 @@
 
 @media (min-width: 58.75em) {
   .featured-section {
-    // margin-top: -80px;
     border-top: 1px solid $primary-color;
   }
 }
 
-@media (min-width: 62.5rem) {
+@media (min-width: 62.5em) {
   .featured-section {
     padding: 1.25rem 1.25rem 3.5rem;
 
     .images {
-      @include grid($column: repeat(4, 1fr), $row: 1fr, $gap: 0.625rem);
+      @include grid($column: repeat(4, 1fr), $row: 1fr, $gap: 20px);
 
       image {
         padding-bottom: 0;
@@ -175,7 +168,7 @@
   }
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 90em) {
   .featured-section {
     .images {
       .image {

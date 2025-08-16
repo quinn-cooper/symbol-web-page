@@ -48,9 +48,9 @@ radioBtn.forEach(function (radio) {
 });
 
 // featured section hover
-// const images = document.getElementsByClassName("image");
 const images = document.querySelectorAll(".image");
 
+// refactored from below
 images.forEach((img) => {
   const singleImg = img.querySelector("img");
   img.addEventListener("mouseover", () => {
@@ -60,6 +60,7 @@ images.forEach((img) => {
     singleImg.style.opacity = "1";
   });
 });
+
 // for (let i = 0; i < images.length; i++) {
 //   const imageNames = document.getElementsByTagName("h5");
 //   const picture = document.getElementsByTagName("img");
