@@ -1,10 +1,10 @@
-@use 'base' as *;
+@use "base" as *;
 
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.8rem;
 $padding-xs: 0.4rem;
 $margin: 1.1rem;
-$margin-sm: .625rem;
+$margin-sm: 0.625rem;
 $off-white: #ebece7;
 $golden-yellow: #efb627;
 $black: #111111;
@@ -12,13 +12,13 @@ $walnut: #986240;
 $grey: #575757;
 
 .bestseller-section {
+  padding-bottom: 50px;
 
-
-html {
+  html {
     background-color: $background-color;
-}
+  }
 
-h2 {
+  h2 {
     color: $primary-color;
     font-family: "supreme book";
     font-weight: 600;
@@ -28,44 +28,48 @@ h2 {
     padding-bottom: $padding-sm;
     padding-top: $padding-lg;
     border-top: 1px solid $primary-color;
-}
+  }
 
-@media(min-width: 50em) {
+  .item-name {
+    font-family: "supreme bold";
+  }
+
+  @media (min-width: 50em) {
     h2 {
-        font-size: clamp(4.9rem, 3vw, 4.9rem);
-        padding-top: $padding-lg;
-        margin: $margin;
+      font-size: clamp(4.9rem, 3vw, 4.9rem);
+      padding-top: $padding-lg;
+      margin: $margin;
     }
-}
+  }
 
-a {
+  a {
     font-family: "chalet";
     text-decoration: none;
 
     .bestseller {
-        color: $primary-color;
-        background-color: rgba($primary-color, 0.15);
-        padding: .2437rem .5281rem
+      color: $primary-color;
+      background-color: rgba($primary-color, 0.15);
+      padding: 0.2437rem 0.5281rem;
     }
 
     #exclusive {
-        color: $highlight-color;
-        background-color: rgba($highlight-color, 0.15);
+      color: $highlight-color;
+      background-color: rgba($highlight-color, 0.15);
     }
 
     .price {
-        color: $primary-color;
+      color: $primary-color;
     }
 
     &:visited,
     &:active,
     &:hover,
     &:focus {
-        color: $primary-color;
+      color: $primary-color;
     }
-}
+  }
 
-.grid-container {
+  .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -73,274 +77,273 @@ a {
     margin: $margin-sm;
 
     .grid-item {
-        display: grid;
-        grid-template-rows: auto 1fr auto auto;
-        height: 100%;
-        padding: $padding-sm;
-        background-color: $white-color;
-        border: 1px solid $sale-bg-color;
+      display: grid;
+      grid-template-rows: auto 1fr auto auto;
+      height: 100%;
+      padding: $padding-sm;
+      background-color: $white-color;
+      border: 1px solid $sale-bg-color;
 
-        // Hide radio buttons in mobile
-        .item-form {
-            display: none;
+      // Hide radio buttons in mobile
+      .item-form {
+        display: none;
+      }
+
+      @media (min-width: 50em) {
+        padding: 1.2rem;
+
+        // Desktop - Hide radio buttons; slide up on hover - source: https://stackoverflow.com/questions/66318732/div-slide-up-on-css-hover
+        .slide-up {
+          opacity: 0;
+          transform: translateY(10%);
+          transition: transform 0.5s ease, opacity 0.2s;
         }
 
-        @media(min-width: 50em) {
-            padding: 1.2rem;
-
-            // Desktop - Hide radio buttons; slide up on hover - source: https://stackoverflow.com/questions/66318732/div-slide-up-on-css-hover
-            .slide-up {
-                opacity: 0;
-                transform: translateY(10%);
-                transition: transform 0.5s ease, opacity 0.2s;
-            }
-
-            // Shift grid-item content further down
-            img,
-            .item-name,
-            .price {
-                transition: transform 0.5s ease;
-                transform: translateY(1.8rem);
-            }
-
-            &:hover {
-                border: 1px solid $primary-color;
-
-                // On hover, slide up radio buttons and grid-item content
-                .slide-up {
-                    opacity: 1;
-                    transform: translateY(0);
-                    pointer-events: auto;
-                }
-
-                img,
-                .item-name,
-                .price {
-                    transform: translateY(0);
-                }
-            }
-
-            .item-form {
-                display: block;
-
-                // Remove default styling of radio buttons and change styles - source: https://stackoverflow.com/questions/61806913/html-radio-button-css-stylingremove-default-grey-circle
-                input[type="radio"] {
-                    cursor: pointer;
-                    -webkit-appearance: none;
-                    appearance: none;
-                    margin-top: $margin-sm;
-                    width: 15px;
-                    height: 15px;
-                    border: 1px solid #111111;
-                    border-radius: 50%;
-                }
-            }
-        }
-
-        a {
-            display: contents;
-        }
-
-        .bestseller,
-        #exclusive {
-            display: inline-flex;
-            font-family: "chalet";
-            font-size: .8125rem;
-            text-decoration: none;
-            padding: $padding-xs;
-            border-radius: 6px;
-            justify-self: start;
-            align-self: start;
-            width: auto;
-        }
-
-        img {
-            justify-self: center;
-            width: 100%;
-            height: auto;
-        }
-
-        @media(min-width: 50em) {
-            img {
-                justify-self: center;
-                width: 280px;
-                height: auto;
-                object-fit: contain;
-            }
-        }
-
-        .item-name {
-            font-size: .9375rem;
-            font-weight: 700;
-            line-height: 1.2437rem;
-            margin-top: 2.5rem;
-            justify-self: start;
-            align-self: start;
-        }
-
+        // Shift grid-item content further down
+        img,
+        .item-name,
         .price {
-            font-size: .9375rem;
-            line-height: 1.2437rem;
-            margin-top: auto;
-            justify-self: start;
-            align-self: start;
+          transition: transform 0.5s ease;
+          transform: translateY(1.8rem);
         }
+
+        &:hover {
+          border: 1px solid $primary-color;
+
+          // On hover, slide up radio buttons and grid-item content
+          .slide-up {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+          }
+
+          img,
+          .item-name,
+          .price {
+            transform: translateY(0);
+          }
+        }
+
+        .item-form {
+          display: block;
+
+          // Remove default styling of radio buttons and change styles - source: https://stackoverflow.com/questions/61806913/html-radio-button-css-stylingremove-default-grey-circle
+          input[type="radio"] {
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: $margin-sm;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #111111;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      a {
+        display: contents;
+      }
+
+      .bestseller,
+      #exclusive {
+        display: inline-flex;
+        font-family: "chalet";
+        font-size: 0.8125rem;
+        text-decoration: none;
+        padding: $padding-xs;
+        border-radius: 6px;
+        justify-self: start;
+        align-self: start;
+        width: auto;
+      }
+
+      img {
+        justify-self: center;
+        width: 100%;
+        height: auto;
+      }
+
+      @media (min-width: 50em) {
+        img {
+          justify-self: center;
+          width: 280px;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+
+      .item-name {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        line-height: 1.2437rem;
+        margin-top: 2.5rem;
+        justify-self: start;
+        align-self: start;
+      }
+
+      .price {
+        font-size: 0.9375rem;
+        line-height: 1.2437rem;
+        margin-top: auto;
+        justify-self: start;
+        align-self: start;
+      }
     }
 
     .grid-item.record-stand {
-        grid-column: 1/2;
-        grid-row: 1/2;
+      grid-column: 1/2;
+      grid-row: 1/2;
 
-        img.record-stand {
-            margin-top: 30px;
-        }
+      img.record-stand {
+        margin-top: 30px;
+      }
     }
 
     .grid-item.unison-stand {
-        grid-column: 2/3;
-        grid-row: 1/2;
+      grid-column: 2/3;
+      grid-row: 1/2;
     }
 
     .grid-item.dovetail {
-        grid-column: 1/2;
-        grid-row: 2/3;
+      grid-column: 1/2;
+      grid-row: 2/3;
     }
 
     .grid-item.storage-cabinet {
-        grid-column: 2/3;
-        grid-row: 2/3;
+      grid-column: 2/3;
+      grid-row: 2/3;
     }
 
     .grid-item.max-stand {
-        grid-column: 1/2;
-        grid-row: 3/4;
+      grid-column: 1/2;
+      grid-row: 3/4;
     }
 
     .grid-item.record-cart {
-        grid-column: 2/3;
-        grid-row: 3/4;
+      grid-column: 2/3;
+      grid-row: 3/4;
     }
 
     .grid-item.record-crate {
-        grid-column: 1/2;
-        grid-row: 4/5;
+      grid-column: 1/2;
+      grid-row: 4/5;
     }
-}
+  }
 
-@media(min-width: 50em) {
+  @media (min-width: 50em) {
     .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 1.25rem;
-        margin: $margin;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: $margin;
 
-        .grid-item.record-stand {
-            grid-column: 2/3;
-            grid-row: 1/2;
+      .grid-item.record-stand {
+        grid-column: 2/3;
+        grid-row: 1/2;
 
-            input[value="yellow"] {
-                background-color: $golden-yellow;
-            }
-
-            input[value="white"] {
-                background-color: $off-white;
-            }
-
-            input[value="black"] {
-                background-color: $black;
-            }
+        input[value="yellow"] {
+          background-color: $golden-yellow;
         }
 
-        .grid-item.unison-stand {
-            grid-column: 3/4;
-            grid-row: 1/2;
-
-            input[value="walnut"] {
-                background-color: $walnut;
-            }
-
-            input[value="white"] {
-                background-color: $off-white;
-            }
-
-            input[value="black"] {
-                background-color: $black;
-            }
+        input[value="white"] {
+          background-color: $off-white;
         }
 
-        .grid-item.dovetail {
-            grid-column: 4/5;
-            grid-row: 1/2;
+        input[value="black"] {
+          background-color: $black;
+        }
+      }
 
-            input[value="ash"] {
-                background-color: #dfc4a9;
-            }
+      .grid-item.unison-stand {
+        grid-column: 3/4;
+        grid-row: 1/2;
 
-            input[value="white"] {
-                background-color: $off-white;
-            }
-
-            input[value="grey"] {
-                background-color: $grey;
-            }
+        input[value="walnut"] {
+          background-color: $walnut;
         }
 
-        .grid-item.storage-cabinet {
-            grid-column: 1/2;
-            grid-row: 2/3;
-
-            input[value="walnut"] {
-                background-color: #886a54;
-            }
-
-            input[value="white"] {
-                background-color: $off-white;
-            }
-
-            input[value="grey"] {
-                background-color: $grey;
-            }
+        input[value="white"] {
+          background-color: $off-white;
         }
 
-        .grid-item.max-stand {
-            grid-column: 2/3;
-            grid-row: 2/3;
+        input[value="black"] {
+          background-color: $black;
+        }
+      }
 
-            input[value="birch"] {
-                background-color: #dcc0ab;
-            }
+      .grid-item.dovetail {
+        grid-column: 4/5;
+        grid-row: 1/2;
+
+        input[value="ash"] {
+          background-color: #dfc4a9;
         }
 
-        .grid-item.record-cart {
-            grid-column: 3/4;
-            grid-row: 2/3;
-
-            input[value="white"] {
-                background-color: $off-white;
-            }
-
-            input[value="yellow"] {
-                background-color: $golden-yellow;
-            }
-
-            input[value="black"] {
-                background-color: $black;
-            }
+        input[value="white"] {
+          background-color: $off-white;
         }
 
-        .grid-item.record-crate {
-            grid-column: 4/5;
-            grid-row: 2/3;
-
-            input[value="oak"] {
-                background-color: #bb8f68;
-            }
-
-            input[value="walnut"] {
-                background-color: $walnut;
-            }
+        input[value="grey"] {
+          background-color: $grey;
         }
+      }
+
+      .grid-item.storage-cabinet {
+        grid-column: 1/2;
+        grid-row: 2/3;
+
+        input[value="walnut"] {
+          background-color: #886a54;
+        }
+
+        input[value="white"] {
+          background-color: $off-white;
+        }
+
+        input[value="grey"] {
+          background-color: $grey;
+        }
+      }
+
+      .grid-item.max-stand {
+        grid-column: 2/3;
+        grid-row: 2/3;
+
+        input[value="birch"] {
+          background-color: #dcc0ab;
+        }
+      }
+
+      .grid-item.record-cart {
+        grid-column: 3/4;
+        grid-row: 2/3;
+
+        input[value="white"] {
+          background-color: $off-white;
+        }
+
+        input[value="yellow"] {
+          background-color: $golden-yellow;
+        }
+
+        input[value="black"] {
+          background-color: $black;
+        }
+      }
+
+      .grid-item.record-crate {
+        grid-column: 4/5;
+        grid-row: 2/3;
+
+        input[value="oak"] {
+          background-color: #bb8f68;
+        }
+
+        input[value="walnut"] {
+          background-color: $walnut;
+        }
+      }
     }
-}
-
+  }
 }

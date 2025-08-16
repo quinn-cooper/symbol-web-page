@@ -96,6 +96,14 @@ footer {
       gap: 0;
     }
 
+    .footer-nav {
+      div {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     .footer-logo {
       align-items: flex-end;
     }

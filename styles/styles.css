@@ -404,7 +404,6 @@ h6 {
 }
 
 .landing-section {
-  min-height: 100vh;
   min-height: 150vh;
   position: relative;
   padding: 10px;
@@ -469,7 +468,7 @@ h6 {
   background-color: #c72a00;
   color: #fffcda;
   font-size: 34px;
-  transition: left 0.4s ease-in-out;
+  transition: left 0.7s ease-in-out;
 }
 .landing-section nav .menu.menu-active {
   left: 0;
@@ -524,6 +523,7 @@ h6 {
   width: 100%;
   display: block;
   z-index: -1;
+  border-bottom: 1px solid #c72a00;
 }
 .landing-section picture img {
   height: 100%;
@@ -552,6 +552,7 @@ h6 {
     padding: 64.0390625px 20px 20px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
   }
   .landing-section .nav-hover {
     color: #fffcda;
@@ -575,6 +576,7 @@ h6 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-areas: "home home ... ul ul ul ul ... ... ... cart logo";
+    gap: 20px;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -595,7 +597,7 @@ h6 {
     filter: brightness(0) saturate(100%) invert(17%) sepia(78%) saturate(3873%) hue-rotate(18deg) brightness(99%) contrast(106%);
   }
   .landing-section nav .desktop-ul {
-    grid-area: ul;
+    grid-column: 4/span 2;
     display: flex;
     font-size: 14px;
     color: #c72a00;
@@ -635,6 +637,7 @@ h6 {
   .landing-section picture {
     grid-column: 4/10;
     padding: 0;
+    border: none;
   }
 }
 .featured-section {
@@ -690,6 +693,9 @@ h6 {
   align-items: baseline;
   padding: 0.5rem 0;
   margin-bottom: 2rem;
+}
+.featured-section .images .image .figure-caption:last-of-type {
+  margin-bottom: 0;
 }
 .featured-section .images .image .figure-caption h5 {
   font-size: 1.125rem;
@@ -753,6 +759,11 @@ h6 {
     gap: 0.625rem;
   }
 }
+@media (min-width: 58.75em) {
+  .featured-section {
+    border-top: 1px solid #c72a00;
+  }
+}
 @media (min-width: 62.5rem) {
   .featured-section {
     padding: 1.25rem 1.25rem 3.5rem;
@@ -792,6 +803,9 @@ h6 {
 .home-collection-section .details img {
   padding: 1.25rem 0;
 }
+.home-collection-section .introducting-symbol img {
+  padding-bottom: 10px;
+}
 .home-collection-section .introducting-symbol .like-h1 {
   color: #c72a00;
   font-size: 3.5rem;
@@ -806,6 +820,15 @@ h6 {
     letter-spacing: -0.02em;
   }
 }
+@media (min-width: 58.75em) {
+  .home-collection-section {
+    padding: 20px 20px 200px;
+  }
+  .home-collection-section .introducting-symbol {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+}
 @media (min-width: 62.5rem) {
   .home-collection-section .details {
     display: grid;
@@ -816,6 +839,7 @@ h6 {
   .home-collection-section .details h3 {
     grid-area: myArea;
     letter-spacing: -0.02em;
+    font-size: 3.25rem;
   }
   .home-collection-section .details h4 {
     grid-area: h4area;
@@ -827,7 +851,6 @@ h6 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     gap: 1.25rem;
-    padding: 1.25rem;
   }
   .home-collection-section .introducting-symbol .like-h1 {
     color: #c72a00;
@@ -840,6 +863,9 @@ h6 {
     font-size: 2.125rem;
     line-height: 1.265;
   }
+}
+.bestseller-section {
+  padding-bottom: 50px;
 }
 .bestseller-section html {
   background-color: #fffcda;
@@ -854,6 +880,9 @@ h6 {
   padding-bottom: 0.625rem;
   padding-top: 1.25rem;
   border-top: 1px solid #c72a00;
+}
+.bestseller-section .item-name {
+  font-family: "supreme bold";
 }
 @media (min-width: 50em) {
   .bestseller-section h2 {
@@ -1107,7 +1136,8 @@ h6 {
 }
 
 .about-us-section {
-  padding: 0 10px 50px;
+  margin: 0 10px 50px;
+  border-top: 1px solid #c72a00;
 }
 .about-us-section h2 {
   font-size: clamp(3.75rem, 0.0004166667vw, 5rem);
@@ -1151,7 +1181,8 @@ h6 {
     display: flex;
     justify-content: space-between;
     gap: 10rem;
-    padding: 20px 20px 150px;
+    padding: 20px 0 150px;
+    margin: 0 20px;
   }
   .about-us-section a {
     position: relative;
@@ -1267,6 +1298,11 @@ footer .footer-logo {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
+  }
+  footer .footer-nav div {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   footer .footer-logo {
     align-items: flex-end;

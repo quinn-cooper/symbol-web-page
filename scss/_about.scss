@@ -1,7 +1,10 @@
 @use "base" as *;
 
 .about-us-section {
-  padding: 0 10px 50px;
+  // padding: 0 10px 50px;
+  margin: 0 10px 50px;
+
+  border-top: 1px solid $primary-color;
 
   h2 {
     font-size: clamp(3.75rem, 60vw / (1440 * 100), 5rem);
@@ -57,7 +60,10 @@
     justify-content: space-between;
     gap: 10rem;
 
-    padding: 20px 20px 150px;
+    // padding: 20px 20px 150px;
+    padding: 20px 0 150px;
+    margin: 0 20px;
+    // margin: 20px 20px 150px;
 
     // animation made with help of chatGPT
     a {

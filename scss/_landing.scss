@@ -1,7 +1,6 @@
 @use "base" as *;
 
 .landing-section {
-  min-height: 100vh;
   min-height: 150vh;
 
   position: relative;
@@ -77,7 +76,8 @@
       color: $background-color;
       font-size: 34px;
 
-      transition: left 0.4s ease-in-out;
+      transition: left 0.7s ease-in-out;
+      // transition: left 0.4s ease-in-out;
 
       &.menu-active {
         left: 0;
@@ -144,6 +144,8 @@
     width: 100%;
     display: block;
     z-index: -1;
+
+    border-bottom: 1px solid $primary-color;
     img {
       height: 100%;
       width: 100%;
@@ -179,6 +181,7 @@
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
 
     .nav-hover {
       color: $background-color;
@@ -216,6 +219,7 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-areas: "home home ... ul ul ul ul ... ... ... cart logo";
+      gap: 20px;
       align-items: center;
       justify-content: center;
       padding: 20px;
@@ -231,14 +235,13 @@
       }
 
       .desktop-ul {
-        grid-area: ul;
+        grid-column: 4 / span 2;
         display: flex;
         font-size: 14px;
         color: $primary-color;
         li {
           width: 100%;
           margin: 0 30px 0 0;
-
           a {
             text-decoration: none;
             &:visited {
@@ -278,6 +281,9 @@
     picture {
       grid-column: 4 / 10;
       padding: 0;
+      // padding-bottom: 80px;
+
+      border: none;
     }
   }
 }
