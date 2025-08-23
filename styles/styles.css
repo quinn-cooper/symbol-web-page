@@ -403,6 +403,10 @@ h6 {
   color: #c72a00;
 }
 
+a {
+  color: inherit;
+}
+
 .landing-section {
   min-height: 150vh;
   position: relative;
@@ -459,7 +463,7 @@ h6 {
 }
 .landing-section nav .menu {
   position: fixed;
-  top: 2.5rem;
+  top: 2.375rem;
   left: -100%;
   width: 100%;
   height: 10rem;
@@ -894,6 +898,7 @@ h6 {
 .bestseller-section a {
   font-family: "chalet";
   text-decoration: none;
+  color: #c72a00;
 }
 .bestseller-section a .bestseller {
   color: #c72a00;
@@ -1157,7 +1162,7 @@ h6 {
   font-size: 0.9375rem;
   display: inline-block;
   margin-bottom: 1rem;
-  color: #c72a00;
+  color: #c72a00 !important;
   text-decoration: none;
   border-bottom: 2px solid;
 }
@@ -1318,6 +1323,7 @@ footer .footer-logo {
     justify-content: center;
     align-items: center;
     font-size: 2.125rem;
+    align-items: flex-end;
   }
   footer form button {
     border-bottom: 1px solid;
