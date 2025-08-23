@@ -116,6 +116,7 @@ footer {
       @include flex(row);
       font-size: 2.125rem;
 
+      align-items: flex-end;
       button {
         border-bottom: 1px solid;
       }
